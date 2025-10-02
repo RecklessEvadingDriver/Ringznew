@@ -38,7 +38,10 @@ function decodeItem(item) {
 }
 
 // ---- Config ----
-const MAIN_URL = Buffer.from("aHR0cHM6Ly9wcml2YXRlYXBpZGF0YS5wYWdlcy5kZXY=", "base64").toString("utf-8");
+const MAIN_URL = Buffer.from(
+  "aHR0cHM6Ly9wcml2YXRlYXBpZGF0YS5wYWdlcy5kZXY=",
+  "base64"
+).toString("utf-8");
 // This decodes to "https://privateapidata.pages.dev"
 
 const HEADERS = {
@@ -112,5 +115,5 @@ app.get("/links/:id", async (req, res) => {
   }
 });
 
-// ---- Start server ----
-const PORT = 5000;
+// ---- Export app for Vercel ----
+export default app;
